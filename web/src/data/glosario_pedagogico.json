@@ -1,0 +1,942 @@
+{
+  "_meta": {
+    "descripcion": "Diccionario pedagógico y de contabilidad nacional SEC-2010 para las finanzas públicas de España",
+    "fuente_oficial": "Eurostat / IGAE (Intervención General de la Administración del Estado) / Manual SEC-2010",
+    "ambito": "España (geo=ES), Cuentas Consolidadas del Sector Administraciones Públicas (S13) y Subsectores",
+    "version": "1.0"
+  },
+  "subsectores": {
+    "S13": {
+      "codigo": "S13",
+      "nombre_corto": "Total Administraciones Públicas (Consolidado)",
+      "tipo": "subsector",
+      "padre": null,
+      "definicion_tecnica": "Sector institucional de las Administraciones Públicas según el Sistema Europeo de Cuentas (SEC-2010, §2.111). Comprende todas las unidades institucionales que son productores no de mercado cuya producción se destina al consumo individual y colectivo, financiada por pagos obligatorios de unidades pertenecientes a otros sectores, y unidades dedicadas a la redistribución de la renta y de la riqueza nacional. Los datos se presentan en términos consolidados, eliminando los flujos internos entre sus subsectores.",
+      "explicacion_aula": "¿Qué es el 'Estado' cuando hablamos de dinero público? No es solo el Gobierno en Madrid, sino la suma de TODO el sector público: el Estado central, tu Comunidad Autónoma, el Ayuntamiento de tu pueblo o ciudad, y la Seguridad Social que paga las pensiones. La cifra de S13 representa la foto global del gasto e ingreso de todos ellos juntos.",
+      "nota_consolidacion": "¡Fundamental para no mentir con los números! Si el Estado central le transfiere a tu Comunidad Autónoma 1.000 millones para educación y tu Comunidad se los gasta en pagar a los profesores, el gasto real fue de 1.000 millones, no de 2.000 millones. En S13 se 'netean' (se eliminan) esas transferencias internas para que el dinero no se cuente dos veces."
+    },
+    "S1311": {
+      "codigo": "S1311",
+      "nombre_corto": "Administración Central",
+      "tipo": "subsector",
+      "padre": "S13",
+      "definicion_tecnica": "Subsector institucional (SEC-2010, §2.114) formado por los órganos administrativos del Estado central y los organismos autónomos dependientes cuya competencia se extiende a la totalidad del territorio económico del país (ministerios, agencias estatales, museos nacionales, etc.), a excepción de los fondos de la Seguridad Social.",
+      "explicacion_aula": "Es el Gobierno Central de España (los ministerios en Madrid, el Ejército, la Guardia Civil, la Policía Nacional, los grandes trenes y carreteras de interés general, la Agencia Tributaria y las relaciones diplomáticas con el resto del mundo).",
+      "nota_consolidacion": "Gran parte de los impuestos que recauda la Administración Central no se los queda ella: se transfieren a las Comunidades Autónomas y Ayuntamientos para financiar colegios, hospitales y servicios locales."
+    },
+    "S1312": {
+      "codigo": "S1312",
+      "nombre_corto": "Comunidades Autónomas",
+      "tipo": "subsector",
+      "padre": "S13",
+      "definicion_tecnica": "Subsector institucional (SEC-2010, §2.115) que engloba a las administraciones públicas regionales que ejercen funciones de gobierno en una parte delimitada del territorio nacional (las 17 Comunidades Autónomas y las 2 Ciudades Autónomas), sus universidades públicas y sus organismos autónomos dependientes.",
+      "explicacion_aula": "Es el nivel de gobierno más cercano a nuestro día a día básico en el Estado del Bienestar: son los gobiernos autonómicos (Junta de Andalucía, Generalitat de Catalunya, Comunidad de Madrid, etc.). Gestionan casi toda la Sanidad (hospitales y centros de salud) y la Educación (institutos, colegios de primaria y universidades públicas).",
+      "nota_consolidacion": "Reciben una gran parte de sus ingresos mediante transferencias del Estado (el Fondo de Garantía de Servicios Públicos Fundamentales) y la cesión de porcentajes del IRPF, IVA e Impuestos Especiales."
+    },
+    "S1313": {
+      "codigo": "S1313",
+      "nombre_corto": "Corporaciones Locales",
+      "tipo": "subsector",
+      "padre": "S13",
+      "definicion_tecnica": "Subsector institucional (SEC-2010, §2.116) constituido por los gobiernos locales cuya competencia abarca únicamente una subdivisión geográfica del territorio regional: municipios (Ayuntamientos), provincias (Diputaciones Provinciales), islas (Cabildos y Consejos insulares) y entidades locales menores.",
+      "explicacion_aula": "Son los más de 8.100 Ayuntamientos de España y las Diputaciones Provinciales. Se encargan de lo que ves al cruzar la calle: limpieza viaria, recogida de basuras, alumbrado público, parques infantiles, autobuses urbanos y policía local.",
+      "nota_consolidacion": "Se financian con tributos propios (como el IBI de las casas, el impuesto de circulación de vehículos y la tasa de basuras) más transferencias recibidas de los Presupuestos Generales del Estado y las CC.AA."
+    },
+    "S1314": {
+      "codigo": "S1314",
+      "nombre_corto": "Fondos de la Seguridad Social",
+      "tipo": "subsector",
+      "padre": "S13",
+      "definicion_tecnica": "Subsector institucional (SEC-2010, §2.117) integrado por las unidades institucionales de carácter público que gestionan sistemas obligatorios de seguridad social, cuyas prestaciones están ligadas a contingencias sociales (jubilación, incapacidad, viudedad, desempleo) y cuya financiación proviene principalmente de cotizaciones obligatorias.",
+      "explicacion_aula": "Es la 'hucha común' solidaria intergeneracional. Los trabajadores y empresas de hoy pagan cotizaciones cada mes para pagar las pensiones de nuestros abuelos, las bajas médicas por maternidad o enfermedad, y las prestaciones a quienes se han quedado sin trabajo.",
+      "nota_consolidacion": "Cuando las cotizaciones sociales no alcanzan para pagar todas las pensiones, la Seguridad Social recibe transferencias millonarias de la Administración Central (S1311) para evitar el déficit en el pago de pensiones contributivas."
+    }
+  },
+  "ingresos_y_saldos": {
+    "TR": {
+      "codigo": "TR",
+      "nombre_corto": "Ingresos Públicos Totales",
+      "tipo": "total_ingresos",
+      "padre": null,
+      "definicion_tecnica": "Total general government revenue (SEC-2010). Suma de todos los recursos no financieros devengados por las Administraciones Públicas: impuestos (D2, D5, D91), cotizaciones sociales netas (D61), rentas de la propiedad (D4), transferencias corrientes y de capital (D7, D9), y ventas de bienes y servicios / producción de mercado (P11+P12+P131).",
+      "explicacion_aula": "Todo el dinero que entra en las arcas públicas en un año. Incluye todos los impuestos que pagamos, las cuotas a la Seguridad Social, las tasas por renovar el DNI o matricularte en la universidad, y las ayudas que nos envía la Unión Europea.",
+      "nota_consolidacion": "Consolidado a nivel S13: no incluye el dinero que un ministerio le pasa a una consejería autonómica, para no sumar dos veces el mismo euro recaudado al ciudadano."
+    },
+    "TE": {
+      "codigo": "TE",
+      "nombre_corto": "Gastos Públicos Totales",
+      "tipo": "total_gastos",
+      "padre": null,
+      "definicion_tecnica": "Total general government expenditure (SEC-2010). Suma de todos los empleos no financieros devengados por las Administraciones Públicas: consumo intermedio (P2), remuneración de asalariados (D1), transferencias sociales en especie y en efectivo (D62, D632), subvenciones (D3), intereses de la deuda (D41), formación bruta de capital / inversión pública (P51g) y otras transferencias de capital.",
+      "explicacion_aula": "Todo lo que gasta el conjunto del sector público en el año: los sueldos de médicos, maestras, policías y jueces; el asfalto de carreteras, los ordenadores de los institutos, los fármacos de los hospitales y el pago puntual de todas las pensiones.",
+      "nota_consolidacion": "En el gasto consolidado S13 se excluyen las transferencias intergubernamentales. Solo mide lo que el sector público gasta en la economía real (bienes, servicios, inversiones o transferencias directas a familias y empresas)."
+    },
+    "B9": {
+      "codigo": "B9",
+      "nombre_corto": "Capacidad (+) o Necesidad (-) de Financiación (Déficit / Superávit)",
+      "tipo": "saldo",
+      "padre": null,
+      "definicion_tecnica": "Net lending (+) / net borrowing (-) (SEC-2010, §8.98). Saldo contable resultante de restar los Gastos Totales a los Ingresos Totales (TR - TE). Si el resultado es negativo (TE > TR), existe 'necesidad de financiación' (déficit público que incrementa la deuda). Si es positivo (TR > TE), existe 'capacidad de financiación' (superávit público).",
+      "explicacion_aula": "¿Nos ha sobrado o nos ha faltado dinero este año? Si el Estado ingresa 100 y gasta 105, tiene un déficit de 5 (B9 = -5). Esos 5 euros que faltan se tienen que pedir prestados a inversores y bancos emitiendo Bonos y Letras del Tesoro, lo que genera deuda pública que habrá que devolver en el futuro con intereses.",
+      "nota_consolidacion": "El déficit público de España que exige la Unión Europea (Protocolo de Déficit Excesivo del Tratado de Maastricht) es exactamente este saldo B9 consolidado del sector S13."
+    },
+    "D2REC": {
+      "codigo": "D2REC",
+      "nombre_corto": "Impuestos Indirectos (Producción e Importaciones)",
+      "tipo": "ingreso",
+      "padre": "TR",
+      "definicion_tecnica": "Taxes on production and imports, receivable (SEC-2010, §4.14). Tributos obligatorios percibidos por las AA.PP. sobre la producción y la importación de bienes y servicios, el empleo de mano de obra o la propiedad de tierras y edificios utilizados en la producción. Incluye el IVA (D211), impuestos sobre importaciones y aranceles (D212), e impuestos especiales sobre hidrocarburos, tabaco, alcohol y electricidad (D214).",
+      "explicacion_aula": "Impuestos que pagas sin darte cuenta cuando compras cosas, sin importar si eres rico o pobre. El más famoso es el IVA (21% en ropa o tecnología, 10% en restaurantes o 4% en el pan). También los impuestos sobre la gasolina que echan tus padres al coche o las bebidas azucaradas.",
+      "nota_consolidacion": "El Estado recauda el IVA a nivel nacional, pero luego le cede automáticamente el 50% de la recaudación a las Comunidades Autónomas para financiar sus servicios."
+    },
+    "D5REC": {
+      "codigo": "D5REC",
+      "nombre_corto": "Impuestos Directos (Renta y Patrimonio)",
+      "tipo": "ingreso",
+      "padre": "TR",
+      "definicion_tecnica": "Current taxes on income, wealth, etc., receivable (SEC-2010, §4.77). Tributos que gravan de forma periódica las rentas percibidas por las personas físicas y jurídicas, así como la titularidad de bienes patrimoniales. Incluye principalmente el IRPF de los trabajadores y autónomos, y el Impuesto sobre Sociedades de los beneficios de las empresas.",
+      "explicacion_aula": "Impuestos directos que se cobran según la riqueza o lo que gana cada persona o empresa. Se rigen por el principio de 'quien más gana, más aporta'. Aquí están el IRPF (que le retienen cada mes del sueldo a tus profesores o a tus padres) y el Impuesto de Sociedades que pagan empresas como Repsol, Mercadona o Banco Santander sobre sus beneficios.",
+      "nota_consolidacion": "El IRPF está cedido al 50%: la mitad va a la Administración Central y la otra mitad a la Comunidad Autónoma donde vive el contribuyente."
+    },
+    "D91REC": {
+      "codigo": "D91REC",
+      "nombre_corto": "Impuestos sobre el Capital",
+      "tipo": "ingreso",
+      "padre": "TR",
+      "definicion_tecnica": "Capital taxes, receivable (SEC-2010, §4.148). Gravámenes periódicos o extraordinarios sobre el valor de los activos poseídos o transferidos entre unidades institucionales, herencias, donaciones entre vivos o plusvalías extraordinarias del capital.",
+      "explicacion_aula": "Tributos que se pagan en momentos muy concretos por heredar o recibir bienes de gran valor: el Impuesto de Sucesiones y Donaciones (cuando heredas una vivienda o una cantidad de dinero de un familiar) o gravámenes extraordinarios sobre grandes fortunas.",
+      "nota_consolidacion": "Este impuesto está totalmente cedido y gestionado por las Comunidades Autónomas, por lo que cada región tiene sus propias deducciones y porcentajes."
+    },
+    "D61REC": {
+      "codigo": "D61REC",
+      "nombre_corto": "Cotizaciones Sociales Netas",
+      "tipo": "ingreso",
+      "padre": "TR",
+      "definicion_tecnica": "Net social contributions, receivable (SEC-2010, §4.88). Pagos obligatorios reales efectuados por los empleadores y por los asalariados o trabajadores por cuenta propia a los sistemas de seguridad social para garantizar el derecho a recibir prestaciones sociales futuras (contributivas).",
+      "explicacion_aula": "No son exactamente impuestos normales, sino aportaciones mensuales obligatorias que hacen tanto el trabajador como la empresa en cada nómina. Es lo que financia directamente la Seguridad Social: gracias a ellas se adquiere el derecho a cobrar una pensión de jubilación, cobrar el paro si te despiden o tener baja retribuida si caes enfermo.",
+      "nota_consolidacion": "Se ingresan directamente en la Tesorería General de la Seguridad Social (S1314), pero constituyen un pilar fundamental de las cuentas consolidadas de todo el país."
+    },
+    "OTR_REC": {
+      "codigo": "OTR_REC",
+      "nombre_corto": "Otros Ingresos Públicos (Tasas, Rentas de Propiedad y Fondos UE)",
+      "tipo": "ingreso",
+      "padre": "TR",
+      "definicion_tecnica": "Otros recursos públicos no tributarios según SEC-2010. Calculado por diferencia como TR - (D2REC + D5REC + D91REC + D61REC). Agrupa las rentas de la propiedad (D4, como dividendos de empresas con participación pública como Aena o Loterías, e intereses cobrados), ventas de bienes y servicios (P11+P12+P131, precios públicos universitarios, tasas portuarias, expedición de licencias), otras transferencias corrientes (D7) y transferencias de capital (D9, destacando los fondos europeos Next Generation EU y FEDER).",
+      "explicacion_aula": "Todos los demás ingresos que no son impuestos corrientes ni cotizaciones de nómina: lo que pagas por matricularte en la universidad pública, las tasas de la ITV pública o la renovación del pasaporte, los beneficios que Aena o Loterías del Estado ingresan a las arcas públicas, y los millones de euros que Europa nos envía en fondos de recuperación para modernizar el país.",
+      "nota_consolidacion": "Se calcula por diferencia exacta para que la descomposición sume el 100,000% de los ingresos totales (TR), asegurando la cuadratura contable perfecta."
+    },
+    "COT_COMUNES": {
+      "codigo": "COT_COMUNES",
+      "nombre_corto": "Cotizaciones por Contingencias Comunes (Pensiones e Incapacidad)",
+      "tipo": "sub_cotizacion",
+      "padre": "D61REC",
+      "definicion_tecnica": "Fracción principal de las cotizaciones sociales obligatorias (tipo legal general 28,30%: 23,60% empresa + 4,70% trabajador). Representa aproximadamente el 82% del total de cotizaciones recaudadas y está afectada a la financiación de pensiones de jubilación, viudedad, orfandad, incapacidad permanente e incapacidad temporal.",
+      "explicacion_aula": "El bloque más grande de la nómina: más del 80% de las cotizaciones mensuales van destinadas a pagar las pensiones de nuestros mayores y las bajas médicas. Como el gasto en pensiones ha crecido con el envejecimiento, estas cotizaciones no bastan y el Estado aporta miles de millones de euros extra de los impuestos generales para pagarlas.",
+      "nota_consolidacion": "Recaudado por la Tesorería General de la Seguridad Social (S1314). Su comparación directa con las funciones GF1001+GF1002+GF1003 refleja la brecha de sostenibilidad contributiva."
+    },
+    "COT_DESEMPLEO": {
+      "codigo": "COT_DESEMPLEO",
+      "nombre_corto": "Cuota de Cotización por Desempleo (SEPE)",
+      "tipo": "sub_cotizacion",
+      "padre": "D61REC",
+      "definicion_tecnica": "Aportación específica sobre el salario (tipo legal del 7,05% para contratos indefinidos y 8,30% para contratos temporales) afectada a la financiación de las prestaciones y subsidios por desempleo gestionados por el Servicio Público de Empleo Estatal (SEPE). Representa en torno al 12,2% del total de D61REC.",
+      "explicacion_aula": "Es el seguro obligatorio contra el despido: empresarios y trabajadores pagan una cuota cada mes para que quien se quede sin empleo tenga una prestación económica mientras busca un nuevo trabajo. En años de bonanza económica genera superávit, pero en crisis profundas con alto paro entra en déficit.",
+      "nota_consolidacion": "Ingresado en la Seguridad Social pero adscrito funcionalmente al SEPE (Administración Central S1311). Al comparar con GF1005 (Desempleo) se obtiene la balanza del seguro de desempleo."
+    },
+    "COT_OTRAS": {
+      "codigo": "COT_OTRAS",
+      "nombre_corto": "Otras Cotizaciones (Accidentes Laborales, Formación Profesional y FOGASA)",
+      "tipo": "sub_cotizacion",
+      "padre": "D61REC",
+      "definicion_tecnica": "Agrupa las cotizaciones por Contingencias Profesionales (Accidentes de Trabajo y Enfermedades Profesionales con tarifas según riesgo de actividad), Formación Profesional (0,70%) y Fondo de Garantía Salarial (FOGASA, 0,20%). Equivale a aproximadamente el 5,8% de D61REC.",
+      "explicacion_aula": "Cuotas de seguridad para riesgos laborales: cubren a trabajadores que se accidentan en su puesto de trabajo, financian cursos de formación laboral y aseguran que si una empresa quiebra, los trabajadores cobren sus nóminas pendientes a través del FOGASA.",
+      "nota_consolidacion": "Recaudadas por la Seguridad Social y asignadas a Mutuas colaboradoras, SEPE y el organismo autónomo FOGASA."
+    },
+    "SEP_FUENTES": {
+      "codigo": "SEP_FUENTES",
+      "nombre_corto": "Principio de Separación de Fuentes de Financiación (Pactos de Toledo)",
+      "tipo": "principio_institucional",
+      "padre": "S13",
+      "definicion_tecnica": "Directriz estructural de la hacienda pública española derivada de los Pactos de Toledo (1995) y formalizada normativamente entre 1999 y 2001 (Ley 24/2001). Establece que las prestaciones contributivas se financian exclusivamente con cotizaciones sociales, mientras que la Sanidad, Servicios Sociales y Educación se financian al 100% mediante la recaudación tributaria general (IRPF, IVA e Impuestos Especiales).",
+      "explicacion_aula": "¿Por qué es falso el mito de que 'las cotizaciones pagan la sanidad'? Hasta 1999, el antiguo Insalud pagaba hospitales con cotizaciones. Desde la reforma de los Pactos de Toledo, la Sanidad se universalizó y pasó a costearse al 100% con los impuestos generales que pagamos todos (IRPF, IVA). Las cotizaciones sociales de las nóminas se destinan de manera exclusiva a pagar pensiones de jubilación, incapacidad y paro.",
+      "nota_consolidacion": "Clave para la contabilidad SEC-2010: la Sanidad (GF07) figura como gasto ejecutado por las Comunidades Autónomas (S1312) financiado a través de los impuestos cedidos del sistema de financiación autonómica, no de las cuotas a la Seguridad Social."
+    }
+  },
+  "cofog_divisiones": {
+    "GF01": {
+      "codigo": "GF01",
+      "nombre_corto": "Servicios Públicos Generales",
+      "tipo": "cofog_division",
+      "padre": "TOTAL",
+      "definicion_tecnica": "División 01 de la clasificación COFOG (SEC-2010). Comprende los gastos de funcionamiento de los órganos legislativos y ejecutivos, hacienda y gestión tributaria, política exterior y diplomacia, ayuda económica internacional, investigación básica, servicios generales de la administración pública y, de manera muy destacada, las transacciones de la deuda pública (pago de intereses netos).",
+      "explicacion_aula": "El 'motor central' del Estado y sus deudas. Incluye el Congreso de los Diputados, los ministerios, los diplomáticos y embajadas en el extranjero, los servidores informáticos centrales de la administración y, sobre todo, los miles de millones de euros que España tiene que pagar cada año a los bancos e inversores en concepto de intereses por el dinero que nos prestaron en el pasado.",
+      "nota_consolidacion": "El subgrupo GF0108 ('Transferencias entre administraciones') se reduce a cero a nivel consolidado S13 porque el dinero que se mueve entre el Estado y las CC.AA. no es un gasto final frente a terceros."
+    },
+    "GF02": {
+      "codigo": "GF02",
+      "nombre_corto": "Defensa",
+      "tipo": "cofog_division",
+      "padre": "TOTAL",
+      "definicion_tecnica": "División 02 COFOG. Gastos en administración, supervisión y funcionamiento de las fuerzas armadas militares (tierra, mar, aire y espacio), defensa civil militarizada, misiones de paz internacionales de la OTAN y la ONU, I+D militar y adquisición de sistemas de armamento y equipamiento defensivo.",
+      "explicacion_aula": "El dinero destinado al Ejército de Tierra, la Armada y el Ejército del Aire y del Espacio. Sirve para pagar los sueldos de los militares, el mantenimiento de barcos como fragatas, aviones de combate Eurofighter, vehículos blindados, la participación en misiones internacionales de la ONU o la OTAN y la Unidad Militar de Emergencias (UME).",
+      "nota_consolidacion": "Gasto ejecutado prácticamente al 100% por la Administración Central (Ministerio de Defensa, S1311)."
+    },
+    "GF03": {
+      "codigo": "GF03",
+      "nombre_corto": "Orden Público y Seguridad",
+      "tipo": "cofog_division",
+      "padre": "TOTAL",
+      "definicion_tecnica": "División 03 COFOG. Comprende los servicios de policía (seguridad ciudadana y control de fronteras), servicios de extinción de incendios y protección civil, administración de justicia (juzgados, tribunales y fiscalías) y administración del sistema penitenciario y centros de internamiento.",
+      "explicacion_aula": "Todo lo que mantiene nuestras calles y vidas seguras: los sueldos y patrullas de la Policía Nacional, Guardia Civil, policías autonómicas (Mossos, Ertzaintza) y Policías Locales de tu pueblo; los parques de bomberos; los jueces, fiscales y juicios en los tribunales; y las cárceles.",
+      "nota_consolidacion": "Es un gasto compartido: la seguridad nacional y prisiones dependen del Estado (S1311), los edificios judiciales y policías autonómicas de las CC.AA. (S1312), y los bomberos y policía de proximidad de los Ayuntamientos (S1313)."
+    },
+    "GF04": {
+      "codigo": "GF04",
+      "nombre_corto": "Asuntos Económicos",
+      "tipo": "cofog_division",
+      "padre": "TOTAL",
+      "definicion_tecnica": "División 04 COFOG. Gastos e inversiones en sectores productivos y fomento de la actividad económica: agricultura, ganadería y pesca; combustibles, gas y electricidad; minería y manufacturas; transporte por carretera, ferrocarril, marítimo y aéreo; telecomunicaciones e I+D comercial e industrial.",
+      "explicacion_aula": "Inversiones para que el país funcione y crezca económicamente: construir vías de alta velocidad (AVE), autopistas y puertos; pagar los abonos gratuitos o rebajados de Renfe y metro; las ayudas y subvenciones a los agricultores y ganaderos; y proyectos de energía verde o digitalización de empresas.",
+      "nota_consolidacion": "Incluye tanto obras públicas directas como subvenciones económicas a empresas de transporte o agrícolas, neteadas de transferencias intermedias entre administraciones."
+    },
+    "GF05": {
+      "codigo": "GF05",
+      "nombre_corto": "Protección del Medio Ambiente",
+      "tipo": "cofog_division",
+      "padre": "TOTAL",
+      "definicion_tecnica": "División 05 COFOG. Agrupa las actuaciones dirigidas a la gestión de residuos urbanos y peligrosos, tratamiento y depuración de aguas residuales, lucha contra la contaminación atmosférica, acústica y del suelo, protección de la biodiversidad, parques nacionales y reservas naturales.",
+      "explicacion_aula": "Cuidar nuestro planeta y nuestro entorno natural: los camiones que recogen y reciclan la basura de los contenedores amarillos, azules y verdes; las depuradoras de agua que limpian el agua del váter antes de devolverla a los ríos; y el cuidado de Doñana, los Picos de Europa o Sierra Nevada.",
+      "nota_consolidacion": "La recogida de residuos y depuración es competencia típica de los Ayuntamientos (S1313), mientras que la gestión de parques y montes corresponde a las CC.AA. (S1312)."
+    },
+    "GF06": {
+      "codigo": "GF06",
+      "nombre_corto": "Vivienda y Servicios Comunitarios",
+      "tipo": "cofog_division",
+      "padre": "TOTAL",
+      "definicion_tecnica": "División 06 COFOG. Actuaciones públicas en materia de promoción y fomento de la vivienda pública accesible, urbanismo, desarrollo comunitario, redes de abastecimiento y distribución de agua potable e instalaciones de alumbrado público.",
+      "explicacion_aula": "Las farolas que iluminan tu calle de noche para que no vayas a oscuras, las tuberías que llevan agua limpia y potable a tu grifo en casa, y las ayudas o construcción de pisos de protección oficial (VPO) para jóvenes y familias vulnerables.",
+      "nota_consolidacion": "El alumbrado y abastecimiento de agua es financiado por corporaciones locales (S1313), mientras los planes de vivienda son cofinanciados entre el Estado (S1311) y las CC.AA. (S1312)."
+    },
+    "GF07": {
+      "codigo": "GF07",
+      "nombre_corto": "Salud (Sanidad)",
+      "tipo": "cofog_division",
+      "padre": "TOTAL",
+      "definicion_tecnica": "División 07 COFOG. Servicios sanitarios integrales: provisión de productos médicos, aparatos y medicamentos subvencionados (recetas); servicios ambulatorios y atención primaria (médicos de familia, pediatras y enfermería en centros de salud); atención médica y quirúrgica hospitalaria; servicios de salud pública y epidemiología (vacunación masiva); e investigación biomédica.",
+      "explicacion_aula": "Uno de los mayores pilares del Estado del Bienestar: cuando vas al pediatra o médico de cabecera en el centro de salud, si tienen que operarte de apendicitis en un hospital público, las ambulancias del 112, los trasplantes de órganos (en los que España es líder mundial) y las vacunas infantiles que te ponen en el colegio.",
+      "nota_consolidacion": "Más del 90% de este dinero lo ejecutan las Comunidades Autónomas (S1312), aunque la compra de vacunas o medicamentos de precio regulado se coordina a nivel estatal."
+    },
+    "GF08": {
+      "codigo": "GF08",
+      "nombre_corto": "Actividades Recreativas, Cultura y Religión",
+      "tipo": "cofog_division",
+      "padre": "TOTAL",
+      "definicion_tecnica": "División 08 COFOG. Financiación y mantenimiento de instalaciones deportivas públicas, fomento del deporte base; museos, teatros, monumentos históricos y festivales culturales; radiotelevisión pública (RTVE y canales autonómicos) y servicios editoriales y bibliotecarios.",
+      "explicacion_aula": "El polideportivo o piscina municipal donde juegas al fútbol o nadas; entrar gratis o con descuento de estudiante al Museo del Prado o a la Alhambra; las bibliotecas públicas de barrio; la orquesta sinfónica y las emisiones de RTVE o los canales autonómicos.",
+      "nota_consolidacion": "El deporte de base y bibliotecas son competencia de los Ayuntamientos (S1313), el patrimonio y televisión regional de las CC.AA. (S1312), y los grandes museos y RTVE del Estado (S1311)."
+    },
+    "GF09": {
+      "codigo": "GF09",
+      "nombre_corto": "Educación",
+      "tipo": "cofog_division",
+      "padre": "TOTAL",
+      "definicion_tecnica": "División 09 COFOG. Comprende la enseñanza reglada en todos sus niveles: infantil y primaria (GF0901), secundaria obligatoria y bachillerato (GF0902), formación profesional y grados superiores, universidades públicas (GF0904), así como los servicios complementarios (becas, comedores escolares y transporte escolar gratuito en zonas rurales).",
+      "explicacion_aula": "¡Directamente donde estás tú ahora mismo! Paga el sueldo de tus profesores de instituto, la calefacción y luz del colegio, los libros de texto gratuitos en comunidades con banco de libros, las becas del Ministerio para que nadie deje de estudiar por falta de dinero y las facultades universitarias.",
+      "nota_consolidacion": "La gestión directa de colegios e institutos corresponde a las Comunidades Autónomas (S1312), pero las becas generales proceden del Ministerio de Educación (S1311) transferidas a las familias."
+    },
+    "GF10": {
+      "codigo": "GF10",
+      "nombre_corto": "Protección Social",
+      "tipo": "cofog_division",
+      "padre": "TOTAL",
+      "definicion_tecnica": "División 10 COFOG. Constituye el mayor bloque de gasto público de las economías europeas. Engloba las prestaciones frente a riesgos vitales: subsidios por enfermedad e incapacidad temporal o permanente (GF1001), pensiones contributivas de jubilación (GF1002), pensiones de viudedad y orfandad (GF1003), prestaciones y permisos por nacimiento y cuidado de menores (GF1004), subsidios y prestaciones por desempleo (GF1005), ayudas al alquiler social (GF1006) y programas contra la exclusión social y dependencia como el Ingreso Mínimo Vital (GF1007).",
+      "explicacion_aula": "La gran red de seguridad social de España y el gasto más grande de todo el presupuesto nacional (más del 40% del gasto total). Aquí está la pensión que cobran tus abuelos cada mes, el dinero que cobra un padre o madre durante las 16 semanas de baja por paternidad, el paro de quien ha perdido el empleo y las ayudas a personas mayores dependientes que no pueden vestirse o comer solas.",
+      "nota_consolidacion": "Las pensiones de jubilación y viudedad las paga la Seguridad Social (S1314), el paro lo abona el SEPE (S1311), y las ayudas a la dependencia las gestionan las Comunidades Autónomas (S1312) financiadas conjuntamente."
+    },
+    "TOTAL": {
+      "codigo": "TOTAL",
+      "nombre_corto": "Gasto Público Total (COFOG)",
+      "tipo": "total_gastos",
+      "padre": null,
+      "definicion_tecnica": "Suma matemática integral de las diez divisiones COFOG (GF01 a GF10). Equivale exactamente a la partida TE (Total Expenditure) de las cuentas de las Administraciones Públicas.",
+      "explicacion_aula": "La suma completa de todo lo que gasta el Estado español en todas sus funciones juntas durante un año. Es exactamente igual al total TE del balance fiscal.",
+      "nota_consolidacion": "Total consolidado del sector S13: no contiene duplicidades por transferencias intergubernamentales."
+    }
+  },
+  "cofog_grupos": {
+    "GF0101": {
+      "codigo": "GF0101",
+      "nombre_corto": "Órganos ejecutivos, legislativos, asuntos fiscales y exteriores",
+      "tipo": "cofog_grupo",
+      "padre": "GF01",
+      "definicion_tecnica": "Servicios de los poderes legislativo y ejecutivo (Parlamentos, Gobiernos), administración tributaria y aduanera, política económica y relaciones diplomáticas internacionales.",
+      "explicacion_aula": "El sueldo de diputados, senadores y ministros, los inspectores de Hacienda que persiguen el fraude fiscal y los diplomáticos que defienden a España en el extranjero.",
+      "nota_consolidacion": "Gastos directos de funcionamiento de la cúpula estatal y autonómica."
+    },
+    "GF0102": {
+      "codigo": "GF0102",
+      "nombre_corto": "Ayuda económica al exterior",
+      "tipo": "cofog_grupo",
+      "padre": "GF01",
+      "definicion_tecnica": "Cooperación internacional al desarrollo y ayuda económica a países en vías de desarrollo canalizada bilateralmente o a través de organismos multilaterales.",
+      "explicacion_aula": "Fondos de cooperación para construir escuelas en África, pozos de agua en zonas secas o ayuda de emergencia tras terremotos e inundaciones en otros países.",
+      "nota_consolidacion": "Canalizado por la Agencia Española de Cooperación Internacional (AECID)."
+    },
+    "GF0103": {
+      "codigo": "GF0103",
+      "nombre_corto": "Servicios generales",
+      "tipo": "cofog_grupo",
+      "padre": "GF01",
+      "definicion_tecnica": "Servicios centrales de la administración: servicios de personal, estadística oficial (INE), archivos generales, cartografía, edificios administrativos centrales y meteorología (AEMET).",
+      "explicacion_aula": "El Instituto Nacional de Estadística (el que hace los censos), el servicio del tiempo (AEMET) y los funcionarios que gestionan los edificios públicos comunes.",
+      "nota_consolidacion": "Gasto operativo transversal de las distintas administraciones públicas."
+    },
+    "GF0104": {
+      "codigo": "GF0104",
+      "nombre_corto": "Investigación básica",
+      "tipo": "cofog_grupo",
+      "padre": "GF01",
+      "definicion_tecnica": "Investigación científica teórica o experimental orientada a la adquisición de nuevos conocimientos sin aplicación práctica comercial directa inmediata (CSIC, laboratorios públicos).",
+      "explicacion_aula": "Los científicos del CSIC que investigan cómo se formó el universo, física cuántica o matemáticas puras para ampliar el conocimiento humano sin un fin comercial inmediato.",
+      "nota_consolidacion": "Fondos estatales y autonómicos asignados a centros de investigación básica."
+    },
+    "GF0105": {
+      "codigo": "GF0105",
+      "nombre_corto": "I+D relacionada con servicios públicos generales",
+      "tipo": "cofog_grupo",
+      "padre": "GF01",
+      "definicion_tecnica": "Investigación y desarrollo aplicada a la mejora de la administración pública, la gobernanza y los sistemas de información pública.",
+      "explicacion_aula": "Proyectos para mejorar cómo funciona el Estado, la administración electrónica y la ciberseguridad del sector público.",
+      "nota_consolidacion": "Gasto consolidado en innovación administrativa."
+    },
+    "GF0106": {
+      "codigo": "GF0106",
+      "nombre_corto": "Servicios públicos generales n.c.o.p.",
+      "tipo": "cofog_grupo",
+      "padre": "GF01",
+      "definicion_tecnica": "Servicios públicos generales no clasificados en otras rúbricas: elecciones y referéndums, registro civil y conservación del patrimonio institucional.",
+      "explicacion_aula": "Lo que cuesta organizar unas elecciones generales (urnas, papeletas, mesas electorales), el Registro Civil o trámites generales no específicos.",
+      "nota_consolidacion": "Gasto residual en servicios generales."
+    },
+    "GF0107": {
+      "codigo": "GF0107",
+      "nombre_corto": "Transacciones de la deuda pública (Intereses)",
+      "tipo": "cofog_grupo",
+      "padre": "GF01",
+      "definicion_tecnica": "Pago de intereses netos devengados por los pasivos financieros emitidos por las Administraciones Públicas (Letras, Bonos y Obligaciones del Estado y préstamos bancarios). No incluye la amortización del principal (que es una operación financiera, no gasto no financiero SEC-2010).",
+      "explicacion_aula": "¡Una de las partidas más importantes del presupuesto! Como el Estado ha pedido prestado mucho dinero en años anteriores, cada año hay que pagar miles de millones de euros solo en INTERESES a los bancos, fondos de pensiones y particulares que nos prestaron dinero.",
+      "nota_consolidacion": "A nivel consolidado S13 se descuentan los intereses que una administración le paga a otra (por ejemplo, lo que las CC.AA. le pagan al Estado por el Fondo de Liquidez Autonómica - FLA)."
+    },
+    "GF0108": {
+      "codigo": "GF0108",
+      "nombre_corto": "Transferencias generales entre niveles de administración",
+      "tipo": "cofog_grupo",
+      "padre": "GF01",
+      "definicion_tecnica": "Transferencias corrientes o de capital de carácter general no condicionadas efectuadas entre distintos niveles de gobierno (ej. del Estado a las CCAA o Ayuntamientos).",
+      "explicacion_aula": "En las cuentas individuales de un ministerio esto es el dinero que le pasa a una autonomía para sus gastos generales. Pero ojo: al juntar todas las cuentas de España, esta casilla se queda en CERO.",
+      "nota_consolidacion": "En el consolidado S13 esta partida es exactamente 0 (o residual) porque al consolidar se netean los envíos de dinero entre el Estado, las CC.AA. y los Ayuntamientos."
+    },
+    "GF0201": {
+      "codigo": "GF0201",
+      "nombre_corto": "Defensa militar",
+      "tipo": "cofog_grupo",
+      "padre": "GF02",
+      "definicion_tecnica": "Gastos en personal militar, adiestramiento, mantenimiento de bases, operaciones de combate e inteligencia de las fuerzas de tierra, mar y aire.",
+      "explicacion_aula": "El funcionamiento diario del Ejército: el sueldo de los soldados, combustible para los buques de la Armada, maniobras militares y mantenimiento de las fragatas y cazas.",
+      "nota_consolidacion": "Gasto exclusivo del Estado central."
+    },
+    "GF0202": {
+      "codigo": "GF0202",
+      "nombre_corto": "Defensa civil",
+      "tipo": "cofog_grupo",
+      "padre": "GF02",
+      "definicion_tecnica": "Organización y entrenamiento de fuerzas de auxilio civil ante conflictos bélicos o situaciones de amenaza militar a la población civil.",
+      "explicacion_aula": "Planes de protección y refugio para civiles si hubiera una guerra o ataque contra el territorio nacional.",
+      "nota_consolidacion": "Gasto coordinado a nivel central."
+    },
+    "GF0203": {
+      "codigo": "GF0203",
+      "nombre_corto": "Ayuda militar al exterior",
+      "tipo": "cofog_grupo",
+      "padre": "GF02",
+      "definicion_tecnica": "Donaciones o subvenciones militares a gobiernos extranjeros o alianzas militares internacionales (armamento, adiestramiento de tropas aliadas).",
+      "explicacion_aula": "El material defensivo, ambulancias militares y entrenamiento que España envía a países aliados en guerra (como la ayuda prestada a Ucrania).",
+      "nota_consolidacion": "Gasto estatal asignado a compromisos internacionales."
+    },
+    "GF0204": {
+      "codigo": "GF0204",
+      "nombre_corto": "I+D relacionada con la defensa",
+      "tipo": "cofog_grupo",
+      "padre": "GF02",
+      "definicion_tecnica": "Investigación científica y técnica orientada a nuevos sistemas armamentísticos, drones, radares avanzados, satélites de vigilancia y comunicaciones militares.",
+      "explicacion_aula": "Diseñar nueva tecnología militar, como satélites para vigilar fronteras, radares para detectar misiles o drones militares de reconocimiento.",
+      "nota_consolidacion": "Desarrollado mediante programas especiales de armamento del Estado."
+    },
+    "GF0205": {
+      "codigo": "GF0205",
+      "nombre_corto": "Defensa n.c.o.p.",
+      "tipo": "cofog_grupo",
+      "padre": "GF02",
+      "definicion_tecnica": "Gastos de administración y gestión de defensa no clasificados en las partidas anteriores.",
+      "explicacion_aula": "Servicios administrativos y apoyo general del Ministerio de Defensa.",
+      "nota_consolidacion": "Gasto residual en defensa."
+    },
+    "GF0301": {
+      "codigo": "GF0301",
+      "nombre_corto": "Servicios de policía y seguridad",
+      "tipo": "cofog_grupo",
+      "padre": "GF03",
+      "definicion_tecnica": "Fuerzas y cuerpos de seguridad: Policía Nacional, Guardia Civil, policías autonómicas y policías locales. Mantenimiento del orden público, patrullaje y control de fronteras.",
+      "explicacion_aula": "Los agentes que patrullan las calles para evitar robos, los coches patrulla de la Policía Nacional, los controles de tráfico de la Guardia Civil y la policía de tu municipio.",
+      "nota_consolidacion": "Combina el gasto estatal de Interior, los gastos de policías autonómicas y los presupuestos de los Ayuntamientos."
+    },
+    "GF0302": {
+      "codigo": "GF0302",
+      "nombre_corto": "Servicios de protección contra incendios",
+      "tipo": "cofog_grupo",
+      "padre": "GF03",
+      "definicion_tecnica": "Cuerpos de bomberos y servicios de prevención, extinción de incendios urbanos e industriales y rescate de personas en accidentes.",
+      "explicacion_aula": "Los parques de bomberos: sus camiones con escaleras gigantes, los trajes protectores y el rescate de personas atrapadas en accidentes de tráfico o incendios de viviendas.",
+      "nota_consolidacion": "Financiado principalmente por Ayuntamientos de más de 20.000 habitantes y Diputaciones Provinciales."
+    },
+    "GF0303": {
+      "codigo": "GF0303",
+      "nombre_corto": "Tribunales de justicia",
+      "tipo": "cofog_grupo",
+      "padre": "GF03",
+      "definicion_tecnica": "Administración del poder judicial: Tribunal Supremo, Audiencia Nacional, Tribunales Superiores de Justicia, juzgados de primera instancia, fiscalías y asistencia jurídica gratuita.",
+      "explicacion_aula": "Los palacios de justicia, los sueldos de jueces y fiscales, los abogados de oficio para quienes no tienen dinero para pagarse uno y los juicios públicos.",
+      "nota_consolidacion": "Los sueldos de jueces dependen del Consejo General del Poder Judicial / Ministerio de Justicia, pero los edificios y ordenadores los pagan las CC.AA."
+    },
+    "GF0304": {
+      "codigo": "GF0304",
+      "nombre_corto": "Prisiones (Centros penitenciarios)",
+      "tipo": "cofog_grupo",
+      "padre": "GF03",
+      "definicion_tecnica": "Construcción, mantenimiento y funcionamiento de centros penitenciarios, custodia y programas de reinserción social y educativa de personas condenadas a penas privativas de libertad.",
+      "explicacion_aula": "El mantenimiento de las cárceles, la comida y sanidad de los reclusos, la vigilancia por parte de los funcionarios de prisiones y los talleres de formación para que aprendan un oficio.",
+      "nota_consolidacion": "Gestionado por Instituciones Penitenciarias (Estado), excepto en Cataluña y País Vasco que tienen las competencias transferidas."
+    },
+    "GF0305": {
+      "codigo": "GF0305",
+      "nombre_corto": "I+D relacionada con orden público y seguridad",
+      "tipo": "cofog_grupo",
+      "padre": "GF03",
+      "definicion_tecnica": "Investigación científica y tecnológica en balística, medicina forense, ciberseguridad policial y sistemas avanzados de detección de delitos.",
+      "explicacion_aula": "La ciencia de la policía científica: análisis de ADN en escenas del crimen, pruebas de balística y programas para rastrear ciberdelincuentes.",
+      "nota_consolidacion": "Gasto tecnológico especializado del sector de seguridad."
+    },
+    "GF0306": {
+      "codigo": "GF0306",
+      "nombre_corto": "Orden público y seguridad n.c.o.p.",
+      "tipo": "cofog_grupo",
+      "padre": "GF03",
+      "definicion_tecnica": "Gestión general y reglamentación de la seguridad no clasificada en grupos anteriores.",
+      "explicacion_aula": "Costes administrativos de los ministerios y consejerías encargadas de la seguridad pública.",
+      "nota_consolidacion": "Gasto administrativo general."
+    },
+    "GF0401": {
+      "codigo": "GF0401",
+      "nombre_corto": "Asuntos económicos, comerciales y laborales generales",
+      "tipo": "cofog_grupo",
+      "padre": "GF04",
+      "definicion_tecnica": "Formulación de la política macroeconómica, comercio interior, inspección de trabajo, mediación de convenios colectivos y regulación de patentes y marcas.",
+      "explicacion_aula": "Los inspectores de trabajo que vigilan que las empresas cumplan los horarios y no contraten a trabajadores en negro, y la oficina de patentes.",
+      "nota_consolidacion": "Repartido entre el Ministerio de Trabajo y Economía y las áreas de empleo autonómicas."
+    },
+    "GF0402": {
+      "codigo": "GF0402",
+      "nombre_corto": "Agricultura, silvicultura, pesca y caza",
+      "tipo": "cofog_grupo",
+      "padre": "GF04",
+      "definicion_tecnica": "Apoyo a la producción agraria, modernización de regadíos, sanidad animal y vegetal, vigilancia pesquera y gestión forestal sostenible.",
+      "explicacion_aula": "Las ayudas a los agricultores de secano y regadío, la protección de los bosques contra plagas, la limpieza de montes para evitar incendios y las patrullas marítimas de pesca.",
+      "nota_consolidacion": "Canaliza gran parte de las ayudas de la Política Agrícola Común (PAC) de la UE junto a fondos estatales y autonómicos."
+    },
+    "GF0403": {
+      "codigo": "GF0403",
+      "nombre_corto": "Combustibles y energía",
+      "tipo": "cofog_grupo",
+      "padre": "GF04",
+      "definicion_tecnica": "Regulación y fomento del sector energético: redes eléctricas, fomento de energías renovables (solar, eólica), bono social eléctrico y transición energética.",
+      "explicacion_aula": "Subvenciones para poner placas solares en los tejados, ayudas a la compra de coches eléctricos (plan MOVES) y el bono social de luz para familias con pocos ingresos.",
+      "nota_consolidacion": "Financiado en buena medida con fondos europeos Next Generation EU para la descarbonización."
+    },
+    "GF0404": {
+      "codigo": "GF0404",
+      "nombre_corto": "Minería, manufacturas y construcción",
+      "tipo": "cofog_grupo",
+      "padre": "GF04",
+      "definicion_tecnica": "Fomento y reestructuración industrial, ayudas a la reconversión de cuencas mineras y apoyo al sector metalúrgico, químico y de automoción.",
+      "explicacion_aula": "Ayudas para que las fábricas de coches en España (SEAT, Ford, Renault) se transformen para fabricar baterías y coches eléctricos.",
+      "nota_consolidacion": "Proyectos estratégicos (PERTE industriales) coordinados por el Estado."
+    },
+    "GF0405": {
+      "codigo": "GF0405",
+      "nombre_corto": "Transporte (Carreteras, trenes, puertos y aeropuertos)",
+      "tipo": "cofog_grupo",
+      "padre": "GF04",
+      "definicion_tecnica": "Inversión, mantenimiento y subsidio de la movilidad y redes de transporte: red de carreteras del Estado y regionales, red ferroviaria (Adif, Renfe), metros, autobuses públicos y puertos.",
+      "explicacion_aula": "El dinero con el que se asfaltan las autovías, las vías del tren de cercanías y del AVE, los subsidios para que el billete de metro y autobús cueste la mitad o sea gratis para estudiantes.",
+      "nota_consolidacion": "Inversión compartida entre Adif/Estado (trenes y autovías), CC.AA. (red secundaria y metros) y Ayuntamientos (autobuses urbanos)."
+    },
+    "GF0406": {
+      "codigo": "GF0406",
+      "nombre_corto": "Comunicaciones y telecomunicaciones",
+      "tipo": "cofog_grupo",
+      "padre": "GF04",
+      "definicion_tecnica": "Despliegue de infraestructuras digitales, red postal pública universal (Correos), gestión del espacio radioeléctrico (antenas 5G) y banda ancha rural.",
+      "explicacion_aula": "El dinero para llevar fibra óptica y cobertura de móvil 5G a pueblos pequeños de la España vaciada, y el servicio público de cartas de Correos.",
+      "nota_consolidacion": "Planes públicos de conectividad digital territorial."
+    },
+    "GF0407": {
+      "codigo": "GF0407",
+      "nombre_corto": "Otras industrias (Turismo y comercio)",
+      "tipo": "cofog_grupo",
+      "padre": "GF04",
+      "definicion_tecnica": "Promoción del turismo sostenible (Turespaña), paradores nacionales, fomento del pequeño comercio de proximidad y mercados de abastos.",
+      "explicacion_aula": "Campañas para promocionar a España en el mundo como destino turístico, modernizar los mercados municipales y apoyar a las tiendas de barrio.",
+      "nota_consolidacion": "Competencias compartidas entre turismo autonómico y el Instituto de Turismo de España."
+    },
+    "GF0408": {
+      "codigo": "GF0408",
+      "nombre_corto": "I+D relacionada con asuntos económicos",
+      "tipo": "cofog_grupo",
+      "padre": "GF04",
+      "definicion_tecnica": "Investigación aplicada al desarrollo tecnológico empresarial, ensayos agrícolas, desarrollo de baterías, hidrógeno verde e ingeniería del transporte.",
+      "explicacion_aula": "Investigar cómo hacer aviones que no contaminen, cómo producir hidrógeno verde o cómo conseguir cosechas que resistan mejor la sequía del cambio climático.",
+      "nota_consolidacion": "Fondos asignados a través del CDTI y agencias de innovación."
+    },
+    "GF0409": {
+      "codigo": "GF0409",
+      "nombre_corto": "Asuntos económicos n.c.o.p.",
+      "tipo": "cofog_grupo",
+      "padre": "GF04",
+      "definicion_tecnica": "Gestión general y regulación económica no agrupada en los sectores específicos anteriores.",
+      "explicacion_aula": "Gastos administrativos generales de los departamentos de industria y fomento.",
+      "nota_consolidacion": "Gasto residual en economía."
+    },
+    "GF0501": {
+      "codigo": "GF0501",
+      "nombre_corto": "Gestión de residuos urbanos e industriales",
+      "tipo": "cofog_grupo",
+      "padre": "GF05",
+      "definicion_tecnica": "Recogida selectiva, transporte, tratamiento, reciclaje e incineración o depósito en vertederos autorizados de residuos sólidos urbanos y peligrosos.",
+      "explicacion_aula": "Los camiones que vacían los contenedores de basura por la noche, las plantas de reciclaje donde separan el plástico y las latas, y los puntos limpios de tu ciudad.",
+      "nota_consolidacion": "Coste directo asumido por los Ayuntamientos financiado parcialmente por la tasa de basuras."
+    },
+    "GF0502": {
+      "codigo": "GF0502",
+      "nombre_corto": "Gestión de aguas residuales",
+      "tipo": "cofog_grupo",
+      "padre": "GF05",
+      "definicion_tecnica": "Operación del alcantarillado público, colectores y estaciones depuradoras de aguas residuales (EDAR) para evitar vertidos contaminantes a cauces y mares.",
+      "explicacion_aula": "La red de tuberías de alcantarillado bajo el asfalto de tu ciudad y las estaciones depuradoras que limpian el agua sucia antes de devolverla a la naturaleza.",
+      "nota_consolidacion": "Compartido entre entidades de saneamiento autonómicas y corporaciones locales."
+    },
+    "GF0503": {
+      "codigo": "GF0503",
+      "nombre_corto": "Reducción de la contaminación",
+      "tipo": "cofog_grupo",
+      "padre": "GF05",
+      "definicion_tecnica": "Medición y control de la calidad del aire, reducción de emisiones contaminantes, pantallas acústicas en carreteras y descontaminación de suelos.",
+      "explicacion_aula": "Las estaciones que miden la boina de contaminación en las grandes ciudades, las zonas de bajas emisiones (ZBE) y las pantallas de cristal en las autovías para evitar el ruido en las casas.",
+      "nota_consolidacion": "Programas coordinados con directivas europeas de calidad del aire."
+    },
+    "GF0504": {
+      "codigo": "GF0504",
+      "nombre_corto": "Protección de la biodiversidad y del paisaje",
+      "tipo": "cofog_grupo",
+      "padre": "GF05",
+      "definicion_tecnica": "Conservación de la flora y fauna silvestre, gestión de Parques Nacionales y Naturales, repoblación forestal y lucha contra la desertificación.",
+      "explicacion_aula": "Salvar especies en peligro de extinción como el lince ibérico o el quebrantahuesos, los guardas forestales y cuidar parajes protegidos como Doñana o Tablas de Daimiel.",
+      "nota_consolidacion": "Competencia directa de las Comunidades Autónomas con coordinación del Ministerio de Transición Ecológica."
+    },
+    "GF0505": {
+      "codigo": "GF0505",
+      "nombre_corto": "I+D relacionada con el medio ambiente",
+      "tipo": "cofog_grupo",
+      "padre": "GF05",
+      "definicion_tecnica": "Estudios científicos sobre el impacto del cambio climático, modelos meteorológicos de sequía e investigación en biorremediación.",
+      "explicacion_aula": "Investigar bacterias capaces de comerse los plásticos marinos o estudiar cómo frenar el avance del desierto en el sur de España.",
+      "nota_consolidacion": "Financiación de centros públicos de ecología e investigación ambiental."
+    },
+    "GF0506": {
+      "codigo": "GF0506",
+      "nombre_corto": "Protección del medio ambiente n.c.o.p.",
+      "tipo": "cofog_grupo",
+      "padre": "GF05",
+      "definicion_tecnica": "Administración, control e inspección ambiental general no asignada a categorías anteriores.",
+      "explicacion_aula": "Los inspectores ambientales que comprueban que las fábricas no hagan vertidos ilegales.",
+      "nota_consolidacion": "Gasto operativo de agencias ambientales."
+    },
+    "GF0601": {
+      "codigo": "GF0601",
+      "nombre_corto": "Promoción y desarrollo de la vivienda pública",
+      "tipo": "cofog_grupo",
+      "padre": "GF06",
+      "definicion_tecnica": "Promoción de suelo residencial, construcción y compra de viviendas de protección oficial (VPO), rehabilitación de barrios degradados y gestión del parque público de alquiler.",
+      "explicacion_aula": "Construir pisos públicos para alquilárselos a precios asequibles a jóvenes y familias trabajadoras, y arreglar edificios antiguos para que no pasen frío en invierno.",
+      "nota_consolidacion": "Cofinanciación entre el Plan Estatal de Vivienda y las agencias públicas de vivienda de CC.AA. y Ayuntamientos."
+    },
+    "GF0602": {
+      "codigo": "GF0602",
+      "nombre_corto": "Desarrollo comunitario y urbanismo",
+      "tipo": "cofog_grupo",
+      "padre": "GF06",
+      "definicion_tecnica": "Planes generales de ordenación urbana (PGOU), pavimentación de calles, construcción de aceras, pasarelas peatonales y centros cívicos de barrio.",
+      "explicacion_aula": "El diseño de tu barrio: ensanchar aceras para que los peatones caminen seguros, poner bancos para descansar, crear carriles bici y construir centros cívicos para los vecinos.",
+      "nota_consolidacion": "Gasto típicamente municipal (Ayuntamientos)."
+    },
+    "GF0603": {
+      "codigo": "GF0603",
+      "nombre_corto": "Abastecimiento de agua potable",
+      "tipo": "cofog_grupo",
+      "padre": "GF06",
+      "definicion_tecnica": "Construcción y explotación de redes de captación, desalación, potabilización y distribución de agua corriente a los hogares y empresas.",
+      "explicacion_aula": "Las plantas desalinizadoras en el Mediterráneo y las tuberías que garantizan que cuando abres el grifo en tu cocina o en la ducha salga agua limpia lista para beber.",
+      "nota_consolidacion": "Gestión municipal y consorcios provinciales o autonómicos de agua (como el Canal de Isabel II)."
+    },
+    "GF0604": {
+      "codigo": "GF0604",
+      "nombre_corto": "Alumbrado público",
+      "tipo": "cofog_grupo",
+      "padre": "GF06",
+      "definicion_tecnica": "Instalación, mantenimiento, sustitución por tecnología LED eficiente y consumo de energía eléctrica del alumbrado de vías y espacios públicos.",
+      "explicacion_aula": "Las bombillas y farolas que iluminan las plazas y calles de noche para que haya seguridad vial y ciudadana, y su sustitución por luces LED que gastan menos energía.",
+      "nota_consolidacion": "Gasto asumido exclusivamente por los Ayuntamientos."
+    },
+    "GF0605": {
+      "codigo": "GF0605",
+      "nombre_corto": "I+D relacionada con la vivienda y servicios comunitarios",
+      "tipo": "cofog_grupo",
+      "padre": "GF06",
+      "definicion_tecnica": "Investigación en nuevos materiales de construcción sostenible, aislamiento térmico pasivo y arquitectura bioclimática.",
+      "explicacion_aula": "Investigar materiales ecológicos para construir casas que no necesiten tanto aire acondicionado en verano ni tanta calefacción en invierno.",
+      "nota_consolidacion": "Proyectos de investigación en edificación pública."
+    },
+    "GF0606": {
+      "codigo": "GF0606",
+      "nombre_corto": "Vivienda y servicios comunitarios n.c.o.p.",
+      "tipo": "cofog_grupo",
+      "padre": "GF06",
+      "definicion_tecnica": "Administración y reglamentación de la edificación, el catastro y el suelo urbano no clasificada previamente.",
+      "explicacion_aula": "El Catastro (que mide y registra el valor de cada casa y finca de España) y las licencias urbanísticas.",
+      "nota_consolidacion": "Gasto administrativo de urbanismo y catastro."
+    },
+    "GF0701": {
+      "codigo": "GF0701",
+      "nombre_corto": "Productos médicos, aparatos y equipos",
+      "tipo": "cofog_grupo",
+      "padre": "GF07",
+      "definicion_tecnica": "Suministro subvencionado de medicamentos dispensados con receta del Sistema Nacional de Salud, prótesis, gafas terapéuticas y aparatos ortopédicos a pacientes no hospitalizados.",
+      "explicacion_aula": "Cuando vas a la farmacia con la receta electrónica del médico de la Seguridad Social y el antibiótico o las pastillas te cuestan solo 2 o 4 euros porque el Estado paga el resto.",
+      "nota_consolidacion": "Financiado por los servicios de salud de las CC.AA. a través del copago farmacéutico."
+    },
+    "GF0702": {
+      "codigo": "GF0702",
+      "nombre_corto": "Servicios para pacientes externos (Atención Primaria)",
+      "tipo": "cofog_grupo",
+      "padre": "GF07",
+      "definicion_tecnica": "Consultas médicas generales y de pediatría, odontología pública, enfermería y diagnósticos en centros de salud ambulatorios.",
+      "explicacion_aula": "El centro de salud de tu barrio: tu médico de familia que te atiende si tienes fiebre o tos, los enfermeros que te curan una herida o te ponen una inyección.",
+      "nota_consolidacion": "Gestionado por las Consejerías de Sanidad autonómicas."
+    },
+    "GF0703": {
+      "codigo": "GF0703",
+      "nombre_corto": "Servicios hospitalarios",
+      "tipo": "cofog_grupo",
+      "padre": "GF07",
+      "definicion_tecnica": "Atención médica, quirúrgica y de urgencias prestada en hospitales públicos: estancias en planta, quirófanos, UCI, resonancias magnéticas y quimioterapia.",
+      "explicacion_aula": "Los grandes hospitales públicos (como La Paz en Madrid, el Vall d'Hebron en Barcelona o La Fe en Valencia): donde están las máquinas de rayos X más avanzadas, las incubadoras de bebés prematuros y los quirófanos donde salvan vidas a diario.",
+      "nota_consolidacion": "Es la partida económica más grande dentro de toda la Sanidad pública española."
+    },
+    "GF0704": {
+      "codigo": "GF0704",
+      "nombre_corto": "Servicios de salud pública",
+      "tipo": "cofog_grupo",
+      "padre": "GF07",
+      "definicion_tecnica": "Epidemiología, programas de vacunación masiva, inspección higiénico-sanitaria de alimentos en restaurantes y bancos de sangre y tejidos.",
+      "explicacion_aula": "La prevención para que la gente no se ponga enferma: las campañas de donación de sangre, las vacunas del tétanos o la gripe y los inspectores que revisan que las cocinas de los restaurantes estén limpias y seguras.",
+      "nota_consolidacion": "Coordinación entre el Centro de Coordinación de Alertas Sanitarias (Ministerio de Sanidad) y servicios autonómicos."
+    },
+    "GF0705": {
+      "codigo": "GF0705",
+      "nombre_corto": "I+D relacionada con la salud",
+      "tipo": "cofog_grupo",
+      "padre": "GF07",
+      "definicion_tecnica": "Investigación biomédica, ensayos clínicos oncológicos y farmacológicos (Instituto de Salud Carlos III, CNIO, CNIC).",
+      "explicacion_aula": "Los científicos españoles que buscan una cura contra el cáncer en el CNIO o investigan cómo regenerar el corazón tras un infarto en el CNIC.",
+      "nota_consolidacion": "Fondos asignados a través del Instituto de Salud Carlos III y fundaciones hospitalarias."
+    },
+    "GF0706": {
+      "codigo": "GF0706",
+      "nombre_corto": "Salud n.c.o.p.",
+      "tipo": "cofog_grupo",
+      "padre": "GF07",
+      "definicion_tecnica": "Administración, regulación y acreditación del sistema sanitario público.",
+      "explicacion_aula": "Los servicios centrales del Ministerio de Sanidad y agencias que aprueban los medicamentos en España (AEMPS).",
+      "nota_consolidacion": "Gasto operativo del sistema sanitario."
+    },
+    "GF0801": {
+      "codigo": "GF0801",
+      "nombre_corto": "Servicios recreativos y deportivos",
+      "tipo": "cofog_grupo",
+      "padre": "GF08",
+      "definicion_tecnica": "Instalaciones deportivas públicas (pabellones, piscinas, campos de atletismo), subvenciones a federaciones deportivas y programas de actividad física.",
+      "explicacion_aula": "Las pistas de baloncesto, rocódromos y campos de fútbol municipales donde entrenas los fines de semana, y las becas a deportistas olímpicos españoles (Plan ADO).",
+      "nota_consolidacion": "Asumido casi íntegramente por Ayuntamientos y el Consejo Superior de Deportes."
+    },
+    "GF0802": {
+      "codigo": "GF0802",
+      "nombre_corto": "Servicios culturales (Museos, teatros y bibliotecas)",
+      "tipo": "cofog_grupo",
+      "padre": "GF08",
+      "definicion_tecnica": "Mantenimiento y programación de museos, yacimientos arqueológicos, archivos históricos, bibliotecas públicas, teatros nacionales y festivales.",
+      "explicacion_aula": "Poder visitar las pinturas de Goya en el Museo del Prado, sacar libros gratis en la biblioteca de tu pueblo o conservar castillos medievales e iglesias románicas.",
+      "nota_consolidacion": "Repartido entre el Ministerio de Cultura, las Direcciones Generales autonómicas de Patrimonio y las concejalías de cultura locales."
+    },
+    "GF0803": {
+      "codigo": "GF0803",
+      "nombre_corto": "Servicios de radiodifusión, televisión y publicaciones",
+      "tipo": "cofog_grupo",
+      "padre": "GF08",
+      "definicion_tecnica": "Financiación pública de la corporación RTVE, televisiones y radios autonómicas de servicio público y la Agencia EFE.",
+      "explicacion_aula": "La 1, La 2, Teledeporte, Clan TV en televisión, Radio Nacional de España (RNE) y las televisiones autonómicas (Canal Sur, TV3, Telemadrid, etc.) que ofrecen información sin anuncios comerciales privados.",
+      "nota_consolidacion": "Financiado con asignaciones de los presupuestos estatales y autonómicos."
+    },
+    "GF0804": {
+      "codigo": "GF0804",
+      "nombre_corto": "Servicios religiosos y de la sociedad civil",
+      "tipo": "cofog_grupo",
+      "padre": "GF08",
+      "definicion_tecnica": "Colaboración institucional con confesiones religiosas reconocidas (asignación IRPF) y apoyo a asociaciones ciudadanas, vecinales y juveniles.",
+      "explicacion_aula": "La conservación de edificios religiosos de valor histórico y el apoyo a asociaciones juveniles y de vecinos que dinamizan los pueblos y barrios.",
+      "nota_consolidacion": "Asignaciones vinculadas a la casilla del IRPF y convenios locales."
+    },
+    "GF0805": {
+      "codigo": "GF0805",
+      "nombre_corto": "I+D relacionada con ocio, cultura y religión",
+      "tipo": "cofog_grupo",
+      "padre": "GF08",
+      "definicion_tecnica": "Investigación aplicada a la restauración de obras de arte, tecnologías de digitalización de archivos y rendimiento biomecánico deportivo.",
+      "explicacion_aula": "Técnicas con láser para limpiar cuadros antiguos de hace 500 años sin dañarlos o escanear manuscritos antiguos para que se puedan leer por internet.",
+      "nota_consolidacion": "Financiación del Instituto del Patrimonio Cultural de España y universidades."
+    },
+    "GF0806": {
+      "codigo": "GF0806",
+      "nombre_corto": "Actividades recreativas, cultura y religión n.c.o.p.",
+      "tipo": "cofog_grupo",
+      "padre": "GF08",
+      "definicion_tecnica": "Servicios administrativos y de coordinación cultural y de fiestas patronales no clasificados previamente.",
+      "explicacion_aula": "Las fiestas patronales de tu pueblo, ferias del libro y eventos comunitarios organizados por el Ayuntamiento.",
+      "nota_consolidacion": "Gasto municipal típico de festejos y cultura."
+    },
+    "GF0901": {
+      "codigo": "GF0901",
+      "nombre_corto": "Educación infantil y primaria",
+      "tipo": "cofog_grupo",
+      "padre": "GF09",
+      "definicion_tecnica": "Enseñanza de 0 a 12 años: guarderías públicas (0-3 años), educación infantil reglada (3-6 años) y educación primaria obligatoria (6-12 años).",
+      "explicacion_aula": "Los colegios de educación infantil y primaria (los CEIP): los maestros que te enseñaron a leer, escribir, sumar y las tablas de multiplicar cuando tenías 7 años.",
+      "nota_consolidacion": "El personal docente lo pagan las CC.AA., pero el edificio, su limpieza y calefacción los paga el Ayuntamiento del municipio."
+    },
+    "GF0902": {
+      "codigo": "GF0902",
+      "nombre_corto": "Educación secundaria (ESO y Bachillerato)",
+      "tipo": "cofog_grupo",
+      "padre": "GF09",
+      "definicion_tecnica": "Educación Secundaria Obligatoria (ESO, 12-16 años) y Bachillerato (16-18 años), así como ciclos de Formación Profesional Básica.",
+      "explicacion_aula": "¡Vuestro instituto actual (el IES)! El sueldo de tus profesores de historia, matemáticas, lengua o química, los microscopios del laboratorio y la electricidad del centro.",
+      "nota_consolidacion": "Financiado y gestionado directamente por las Comunidades Autónomas (S1312)."
+    },
+    "GF0903": {
+      "codigo": "GF0903",
+      "nombre_corto": "Educación postsecundaria no terciaria",
+      "tipo": "cofog_grupo",
+      "padre": "GF09",
+      "definicion_tecnica": "Programas de formación profesional para el empleo, escuelas oficiales de idiomas y enseñanzas artísticas o deportivas que no otorgan título universitario.",
+      "explicacion_aula": "Las Escuelas Oficiales de Idiomas (EOI) donde la gente aprende inglés, francés o alemán por las tardes a precios muy reducidos, o conservatorios profesionales de música.",
+      "nota_consolidacion": "Centros autonómicos reglados."
+    },
+    "GF0904": {
+      "codigo": "GF0904",
+      "nombre_corto": "Educación terciaria (Universidad y FP Superior)",
+      "tipo": "cofog_grupo",
+      "padre": "GF09",
+      "definicion_tecnica": "Enseñanza universitaria (grados, másteres y doctorados) en universidades públicas y ciclos formativos de Grado Superior de Formación Profesional.",
+      "explicacion_aula": "Las universidades públicas de España (Complutense, Autónoma de Barcelona, Granada, Sevilla, etc.): donde la matrícula que paga el alumno solo cubre un 15-20% del coste real y el otro 80% lo pagan los presupuestos públicos con los impuestos de todos.",
+      "nota_consolidacion": "Transferencias corrientes y de capital de las CC.AA. a los presupuestos de las Universidades públicas."
+    },
+    "GF0905": {
+      "codigo": "GF0905",
+      "nombre_corto": "Educación no atribuible a ningún nivel",
+      "tipo": "cofog_grupo",
+      "padre": "GF09",
+      "definicion_tecnica": "Educación permanente de adultos, centros penitenciarios y cursos formativos que no se corresponden con una etapa de edad concreta.",
+      "explicacion_aula": "Las escuelas de adultos donde personas mayores van a aprender informática o a sacarse el graduado en ESO que no pudieron cursar de jóvenes.",
+      "nota_consolidacion": "Gasto formativo de segundas oportunidades."
+    },
+    "GF0906": {
+      "codigo": "GF0906",
+      "nombre_corto": "Servicios auxiliares de la educación (Becas, comedores y transporte)",
+      "tipo": "cofog_grupo",
+      "padre": "GF09",
+      "definicion_tecnica": "Servicios complementarios de la enseñanza: sistema estatal y autonómico de becas y ayudas al estudio, comedores escolares y transporte escolar gratuito en zonas rurales.",
+      "explicacion_aula": "Los autobuses escolares amarillos o verdes que van a buscar gratis a los alumnos que viven en pueblos pequeños para llevarlos al instituto más cercano, las becas MEC para pagar la residencia o el material a quien lo necesita, y los comedores escolares.",
+      "nota_consolidacion": "Las becas generales son transferencias del Estado (S1311), mientras que los autobuses y comedores son gestionados por las CC.AA. (S1312)."
+    },
+    "GF0907": {
+      "codigo": "GF0907",
+      "nombre_corto": "I+D relacionada con la educación",
+      "tipo": "cofog_grupo",
+      "padre": "GF09",
+      "definicion_tecnica": "Investigación sobre métodos pedagógicos, innovación docente, evaluación de sistemas educativos y neuroeducación.",
+      "explicacion_aula": "Investigar qué métodos de enseñanza consiguen que los alumnos aprendan mejor matemáticas o ciencia, o cómo usar la inteligencia artificial de forma segura en las aulas.",
+      "nota_consolidacion": "Proyectos pedagógicos y evaluación del sistema educativo (INEE)."
+    },
+    "GF0908": {
+      "codigo": "GF0908",
+      "nombre_corto": "Educación n.c.o.p.",
+      "tipo": "cofog_grupo",
+      "padre": "GF09",
+      "definicion_tecnica": "Administración, inspección educativa y gestión de títulos no recogida en otros grupos.",
+      "explicacion_aula": "Los inspectores de educación que visitan los institutos para comprobar que todo funciona bien y la tramitación oficial de los títulos de Bachillerato.",
+      "nota_consolidacion": "Gasto de inspección y administración educativa."
+    },
+    "GF1001": {
+      "codigo": "GF1001",
+      "nombre_corto": "Enfermedad e incapacidad (Bajas laborales e invalidez)",
+      "tipo": "cofog_grupo",
+      "padre": "GF10",
+      "definicion_tecnica": "Prestaciones económicas por incapacidad temporal (bajas médicas) y pensiones contributivas y no contributivas de incapacidad permanente o invalidez.",
+      "explicacion_aula": "Si un trabajador se rompe una pierna o tiene una enfermedad grave y no puede ir a trabajar durante tres meses, la Seguridad Social le sigue pagando su sueldo para que no se quede sin dinero mientras se recupera.",
+      "nota_consolidacion": "Prestaciones abonadas por el Instituto Nacional de la Seguridad Social (INSS, S1314)."
+    },
+    "GF1002": {
+      "codigo": "GF1002",
+      "nombre_corto": "Edad avanzada (Pensiones de jubilación)",
+      "tipo": "cofog_grupo",
+      "padre": "GF10",
+      "definicion_tecnica": "Pensiones contributivas y no contributivas de jubilación pagadas a personas de edad avanzada que cesan en su actividad laboral, y servicios de centros de día y residencias de mayores.",
+      "explicacion_aula": "¡La partida individual más colosal de toda España! Más de 130.000 millones de euros al año. Es la pensión de jubilación que cobran tus abuelos cada mes tras haber trabajado durante 35 o 40 años, para que puedan vivir con dignidad.",
+      "nota_consolidacion": "Abonada por la Seguridad Social (S1314) a partir de las cotizaciones y de transferencias de apoyo del Estado (S1311)."
+    },
+    "GF1003": {
+      "codigo": "GF1003",
+      "nombre_corto": "Supervivencia (Pensiones de viudedad y orfandad)",
+      "tipo": "cofog_grupo",
+      "padre": "GF10",
+      "definicion_tecnica": "Pensiones y ayudas económicas concedidas a los cónyuges e hijos supervivientes tras el fallecimiento de la persona que sustentaba económicamente a la familia.",
+      "explicacion_aula": "Si uno de los padres o abuelos fallece, el cónyuge que sigue vivo cobra una pensión de viudedad para no quedar desamparado, y los hijos menores o estudiantes huérfanos cobran una pensión de orfandad.",
+      "nota_consolidacion": "Sistema contributivo de la Seguridad Social (INSS)."
+    },
+    "GF1004": {
+      "codigo": "GF1004",
+      "nombre_corto": "Familia e infancia (Permisos de maternidad/paternidad)",
+      "tipo": "cofog_grupo",
+      "padre": "GF10",
+      "definicion_tecnica": "Prestaciones por nacimiento y cuidado del menor (permisos retribuidos de 16 semanas para madres y padres), deducciones fiscales por hijo a cargo y guarderías públicas de apoyo a la conciliación.",
+      "explicacion_aula": "Cuando nace un bebé, tanto la madre como el padre tienen 16 semanas de permiso 100% pagadas por el Estado para cuidar al recién nacido en sus primeros meses de vida sin perder su salario ni su empleo.",
+      "nota_consolidacion": "Financiado con cargo a los fondos de la Seguridad Social."
+    },
+    "GF1005": {
+      "codigo": "GF1005",
+      "nombre_corto": "Desempleo (Prestaciones y subsidios por desempleo)",
+      "tipo": "cofog_grupo",
+      "padre": "GF10",
+      "definicion_tecnica": "Prestaciones contributivas y subsidios asistenciales abonados a las personas trabajadoras en situación legal de desempleo mientras buscan activamente trabajo (SEPE).",
+      "explicacion_aula": "Lo que comúnmente llamamos 'el paro': si una persona pierde su trabajo porque la empresa cierra o la despiden, cobra una ayuda económica mensual durante un tiempo mientras hace cursos y busca un nuevo empleo.",
+      "nota_consolidacion": "Gestionado por el Servicio Público de Empleo Estatal (SEPE, S1311) con cargo a las cotizaciones por desempleo."
+    },
+    "GF1006": {
+      "codigo": "GF1006",
+      "nombre_corto": "Vivienda social y ayudas al alquiler vulnerable",
+      "tipo": "cofog_grupo",
+      "padre": "GF10",
+      "definicion_tecnica": "Subsidios de alquiler directo a familias en situación de vulnerabilidad económica y albergues de acogida inmediata para personas sin hogar.",
+      "explicacion_aula": "Subvenciones directas para pagar el alquiler de una casa a familias que se han quedado sin ingresos, y albergues públicos de acogida para personas sin hogar.",
+      "nota_consolidacion": "Servicios sociales gestionados por Ayuntamientos y CC.AA."
+    },
+    "GF1007": {
+      "codigo": "GF1007",
+      "nombre_corto": "Exclusión social y Dependencia (Ingreso Mínimo Vital)",
+      "tipo": "cofog_grupo",
+      "padre": "GF10",
+      "definicion_tecnica": "Programas de garantía de rentas mínimas contra la pobreza extrema (Ingreso Mínimo Vital - IMV), rentas mínimas de inserción autonómicas y ayudas del Sistema para la Autonomía y Atención a la Dependencia (SAAD).",
+      "explicacion_aula": "El 'suelo de cristal' para que nadie caiga en la miseria absoluta: el Ingreso Mínimo Vital para hogares sin ingresos y los cuidadores públicos que ayudan a ancianos o personas con discapacidad que no pueden levantarse solas de la cama.",
+      "nota_consolidacion": "El IMV es estatal (S1314/S1311) y la Ley de Dependencia se financia al 50% entre el Estado y las Comunidades Autónomas."
+    },
+    "GF1008": {
+      "codigo": "GF1008",
+      "nombre_corto": "I+D relacionada con la protección social",
+      "tipo": "cofog_grupo",
+      "padre": "GF10",
+      "definicion_tecnica": "Estudios actuariales y demográficos sobre la sostenibilidad futura de las pensiones, análisis de la pobreza y modelos de envejecimiento activo.",
+      "explicacion_aula": "Matemáticos y economistas que calculan cuántos jubilados habrá dentro de 20 o 30 años y cómo organizar el sistema de pensiones para que siga funcionando con seguridad.",
+      "nota_consolidacion": "Estudios del Instituto Nacional de la Seguridad Social y centros demográficos."
+    },
+    "GF1009": {
+      "codigo": "GF1009",
+      "nombre_corto": "Protección social n.c.o.p.",
+      "tipo": "cofog_grupo",
+      "padre": "GF10",
+      "definicion_tecnica": "Servicios administrativos centrales de la Seguridad Social y acción social no clasificada en grupos anteriores.",
+      "explicacion_aula": "Las oficinas de atención al público de la Seguridad Social (CAISS) donde te atienden con cita previa.",
+      "nota_consolidacion": "Gasto operativo del sistema de protección social."
+    }
+  },
+  "deuda_y_coste_financiero": {
+    "DEUDA_PDE_MAASTRICHT": {
+      "codigo": "GD",
+      "termino": "Deuda Pública según el Protocolo de Déficit Excesivo (Deuda de Maastricht)",
+      "definicion_pedagogica": "Volumen total de pasivos financieros exigibles brutos que las Administraciones Públicas mantienen frente a terceros (inversores que compran Letras, Bonos y Obligaciones del Estado, o entidades financieras que otorgan préstamos).",
+      "fuente_oficial": "Banco de España / Eurostat (Reglamento UE 479/2009 y SEC-2010)",
+      "por_que_importa_en_el_aula": "Explica la diferencia esencial entre el 'déficit' (el agujero contable de un solo año) y la 'deuda' (la suma acumulada de todos los déficits históricos que el país debe devolver).",
+      "unidad_medida": "M€ corrientes, % del PIB y €/habitante"
+    },
+    "DEUDA_VIVA_LOCAL": {
+      "codigo": "DEUDA_VIVA",
+      "termino": "Deuda Viva de las Entidades Locales",
+      "definicion_pedagogica": "Saldo vivo consolidado a 31 de diciembre de todas las operaciones financieras a corto y largo plazo (créditos bancarios y emisiones de deuda) concertadas por Ayuntamientos, Diputaciones, Cabildos y sus organismos dependientes.",
+      "fuente_oficial": "Ministerio de Hacienda y Banco de España (Oficina Virtual de Entidades Locales)",
+      "por_que_importa_en_el_aula": "Permite a los estudiantes comprobar cuánto debe su propio ayuntamiento o diputación por habitante y verificar si su municipio está saneado o endeudado.",
+      "unidad_medida": "M€ corrientes, €/habitante y % sobre ingresos corrientes"
+    },
+    "INTERESES_DEUDA": {
+      "codigo": "GF0107 / D41PAY / Cap. 3",
+      "termino": "Intereses de la Deuda Pública y Coste Financiero",
+      "definicion_pedagogica": "La cuantía que las administraciones públicas deben pagar anualmente a sus acreedores simplemente por el hecho de tener deuda, antes de amortizar o devolver un solo euro de capital.",
+      "fuente_oficial": "Eurostat (COFOG GF0107 / D41PAY) y Presupuestos Generales (Capítulo 3: Gastos Financieros)",
+      "por_que_importa_en_el_aula": "Ilustra el coste de oportunidad del endeudamiento: en España, los ~40.000 M€ anuales de intereses equivalen aproximadamente al 60% de todo el presupuesto nacional de Educación o al 40% del gasto sanitario total.",
+      "unidad_medida": "M€ anuales, €/habitante y tipo de interés implícito (%)"
+    }
+  },
+  "marco_normativo_deficit_y_deuda": {
+    "NIVEL_1_ESTADO": {
+      "nivel": "Administración Central y Total Administraciones Públicas (S.13 / S.1311)",
+      "regla_deficit": "Límite máximo del 3,0% del PIB según el Pacto de Estabilidad y Crecimiento (PEC). Superar este umbral activa el Procedimiento de Déficit Excesivo por parte de la Comisión Europea.",
+      "regla_deuda": "Límite de referencia del 60,0% del PIB (Criterio de Maastricht).",
+      "marco_constitucional": "Artículo 135 de la Constitución Española (reforma de 2011): consagra el principio de estabilidad presupuestaria y establece la prioridad absoluta e inaplazable del pago de los créditos para satisfacer los intereses y el capital de la deuda pública frente a cualquier otro gasto.",
+      "nueva_gobernanza_europea_2024": "Reglamento (UE) 2024/1264: introduce como ancla operativa vinculante la senda de gasto primario neto plurianual acordada en los Planes Fiscales-Estructurales de medio plazo (4 a 7 años)."
+    },
+    "NIVEL_2_CCAA": {
+      "nivel": "Comunidades Autónomas (S.1312)",
+      "organo_regulador": "Consejo de Política Fiscal y Financiera (CPFF), presidido por el Ministerio de Hacienda con participación de los consejeros de hacienda autonómicos.",
+      "limite_deuda_referencia": "13,0% del PIB regional (fijado por la Disposición Transitoria Primera de la LOEPSF 2/2012).",
+      "objetivo_deficit": "Senda trienal fijada por el CPFF (objetivo de equilibrio presupuestario a medio plazo).",
+      "mecanismos_tutelados": "Fondo de Liquidez Autonómico (FLA) y Fondo de Facilidad Financiera: el Estado financia a las CC.AA. a cambio de estricta condicionalidad fiscal y rendición mensual de cuentas a la IGAE.",
+      "consecuencias_incumplimiento": "Presentación obligatoria de un Plan Económico-Financiero (PEF) que detalle las medidas de ajuste o incremento de ingresos necesarias para corregir la desviación en un plazo máximo de dos años."
+    },
+    "NIVEL_3_Y_4_LOCAL": {
+      "nivel": "Diputaciones Provinciales y Ayuntamientos (S.1313 Local)",
+      "principio_equilibrio_obligatorio": "Artículo 165 del TRLRHL: el presupuesto de las entidades locales debe aprobarse en situación de estricto equilibrio entre ingresos y gastos corrientes, prohibiendo el déficit inicial.",
+      "limites_endeudamiento_lrhl": {
+        "regimen_ordinario": "Ratio de deuda viva sobre ingresos corrientes liquidados inferior o igual al 75%. El Ayuntamiento o Diputación puede concertar créditos bancarios a largo plazo por acuerdo del Pleno sin tutela administrativa externa.",
+        "tutela_previa": "Ratio de deuda viva entre el 75% y el 110%. Requiere autorización preceptiva y previa del órgano de tutela financiera (Ministerio de Hacienda o CC.AA. con competencias estatutarias de tutela financiera local).",
+        "credito_prohibido": "Ratio de deuda viva superior al 110%. Prohibición taxativa de concertar nuevas operaciones de crédito a largo plazo para financiar inversiones; obligación de aprobar un Plan de Reducción de Deuda."
+      },
+      "regla_superavit_art32_loepsf": "El superávit presupuestario (saldo positivo B.9) y el Remanente de Tesorería para Gastos Generales (RTGG) deben destinarse obligatoriamente a reducir el endeudamiento neto bancario o, potestativamente si se cumplen los requisitos legales de estabilidad, a Inversiones Financieramente Sostenibles (IFS)."
+    }
+  }
+}
