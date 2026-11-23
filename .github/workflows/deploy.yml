@@ -35,16 +35,18 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'web/package-lock.json'
 
-      - name: Instalar dependencias del frontend
-        run: npm --prefix web install
+      - name: Instalar dependencias
+        working-directory: web
+        run: npm install
 
       - name: Compilar aplicación web
-        run: npm --prefix web run build
+        working-directory: web
+        run: npm run build
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Subir artefactos de la web (web/dist)
+      - name: Subir artefactos de la web
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'web/dist'
